@@ -1,0 +1,97 @@
+<div class="products-page">
+
+  <div class="products-header">
+
+    <h1>All Products</h1>
+
+    <p>Explore our latest products</p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        (input)="searchProducts()"
+        placeholder="Search products...">
+
+      <button
+        type="button"
+        (click)="searchProducts()">
+        🔍 Search
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="no-products"
+    *ngIf="filteredProducts.length === 0">
+
+    <h2>No products found</h2>
+
+    <p>
+      Try searching for another product.
+    </p>
+
+  </div>
+
+
+  <div
+    class="products-grid"
+    *ngIf="filteredProducts.length > 0">
+
+    <div
+      class="product-card"
+      *ngFor="let product of filteredProducts">
+
+      <img
+        [src]="product.image"
+        [alt]="product.name">
+
+      <div class="product-info">
+
+        <h2>
+          {{ product.name }}
+        </h2>
+
+        <p class="description">
+          {{ product.description }}
+        </p>
+
+        <p class="category">
+          {{ product.category }}
+        </p>
+
+        <div class="rating">
+          ⭐ {{ product.rating }}
+        </div>
+
+        <h3>
+          ₹{{ product.price }}
+        </h3>
+
+        <div class="buttons">
+
+          <button
+            class="cart-btn"
+            (click)="addToCart(product)">
+            Add to Cart
+          </button>
+
+          <button
+            class="view-btn"
+            [routerLink]="['/product', product.id]">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,169 @@
+.home {
+  min-height: calc(100vh - 64px);
+  background: #eef4fa;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #dceeff 0%,
+    #f8fbff 55%,
+    #fff3df 100%
+  );
+
+  border-bottom: 1px solid #d5e2ee;
+}
+
+.hero-content {
+  padding: 30px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  color: #172b3a;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 19px;
+  color: #536675;
+  margin-bottom: 30px;
+}
+
+.shop-button {
+  padding: 13px 30px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #ff9900;
+  color: #172b3a;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  box-shadow: 0 3px 8px rgba(255, 153, 0, 0.25);
+
+  transition: 0.2s;
+}
+
+.shop-button:hover {
+  background: #e88900;
+  transform: translateY(-2px);
+}
+
+/* CATEGORIES */
+
+.categories {
+  padding: 50px 40px 60px;
+
+  text-align: center;
+
+  background: #eef4fa;
+}
+
+.categories h2 {
+  font-size: 30px;
+  color: #172b3a;
+  margin-bottom: 30px;
+}
+
+.category-container {
+  max-width: 1050px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.category-card {
+  padding: 30px 20px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e3ee;
+
+  box-shadow: 0 4px 12px rgba(40, 70, 100, 0.08);
+
+  transition: 0.2s;
+}
+
+/* Small color differences between cards */
+
+.category-card:nth-child(1) {
+  border-top: 4px solid #3498db;
+  background: #f5faff;
+}
+
+.category-card:nth-child(2) {
+  border-top: 4px solid #6c8cd5;
+  background: #f7f8ff;
+}
+
+.category-card:nth-child(3) {
+  border-top: 4px solid #8e7cc3;
+  background: #faf8ff;
+}
+
+.category-card:nth-child(4) {
+  border-top: 4px solid #e67e22;
+  background: #fffaf4;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 7px 18px rgba(40, 70, 100, 0.12);
+}
+
+.category-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.category-card h3 {
+  color: #263746;
+  margin-bottom: 8px;
+  font-size: 19px;
+}
+
+.category-card p {
+  color: #687987;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .categories {
+    padding: 35px 20px;
+  }
+
+  .category-container {
+    grid-template-columns: 1fr;
+  }
+}
